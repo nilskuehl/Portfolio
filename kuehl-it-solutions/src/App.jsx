@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Background3D from './components/Background3D';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -16,11 +17,22 @@ export default function App() {
           {/* Burger Menu */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-black hover:text-gray-600 transition z-50"
+            className="text-black hover:text-gray-600 transition-all duration-300 z-50"
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
             aria-label="Menu"
           >
-            {menuOpen ? <X size={32} /> : <Menu size={32} />}
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <Menu
+                size={32}
+                className={`absolute transition-all duration-300 ${menuOpen ? 'rotate-90 opacity-0 scale-0' : 'rotate-0 opacity-100 scale-100'
+                  }`}
+              />
+              <X
+                size={32}
+                className={`absolute transition-all duration-300 ${menuOpen ? 'rotate-0 opacity-100 scale-100' : '-rotate-90 opacity-0 scale-0'
+                  }`}
+              />
+            </div>
           </button>
 
           {/* Logo */}
@@ -30,47 +42,55 @@ export default function App() {
         </nav>
 
         {/* Burger Menu Overlay - links oben, kleiner */}
-        {menuOpen && (
-          <div className="fixed top-32 left-8 z-40 p-6 bg-white/40 backdrop-blur-sm border border-black/20 rounded-lg">
-            <div className="flex flex-col items-start">
-              <Link
-                to="/"
-                onClick={() => setMenuOpen(false)}
-                style={{ color: '#C9A961', textDecoration: 'none' }}
-                className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-              >
-                Home
-              </Link>
-              <div className="w-full h-px bg-black/10 my-1"></div>
-              <Link
-                to="/about"
-                onClick={() => setMenuOpen(false)}
-                style={{ color: '#C9A961', textDecoration: 'none' }}
-                className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-              >
-                Über mich
-              </Link>
-              <div className="w-full h-px bg-black/10 my-1"></div>
-              <a
-                href="#referenzen"
-                onClick={() => setMenuOpen(false)}
-                style={{ color: '#C9A961', textDecoration: 'none' }}
-                className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-              >
-                Work
-              </a>
-              <div className="w-full h-px bg-black/10 my-1"></div>
-              <a
-                href="#kontakt"
-                onClick={() => setMenuOpen(false)}
-                style={{ color: '#C9A961', textDecoration: 'none' }}
-                className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-              >
-                Kontakt
-              </a>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="fixed top-32 left-8 z-40 p-6 bg-white/40 backdrop-blur-sm border border-black/20 rounded-lg"
+            >
+              <div className="flex flex-col items-start">
+                <Link
+                  to="/"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ color: '#C9A961', textDecoration: 'none' }}
+                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                >
+                  Home
+                </Link>
+                <div className="w-full h-px bg-black/10 my-1"></div>
+                <Link
+                  to="/about"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ color: '#C9A961', textDecoration: 'none' }}
+                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                >
+                  Über mich
+                </Link>
+                <div className="w-full h-px bg-black/10 my-1"></div>
+                <a
+                  href="#referenzen"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ color: '#C9A961', textDecoration: 'none' }}
+                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                >
+                  Work
+                </a>
+                <div className="w-full h-px bg-black/10 my-1"></div>
+                <a
+                  href="#kontakt"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ color: '#C9A961', textDecoration: 'none' }}
+                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                >
+                  Kontakt
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Der 3D Hintergrund (bleibt immer gleich) */}
         <Background3D />
