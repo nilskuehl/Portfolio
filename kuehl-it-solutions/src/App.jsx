@@ -10,7 +10,7 @@ export default function App() {
     <div className="bg-black min-h-screen selection:bg-white selection:text-black">
       {/* Navigation fixiert oben */}
       <nav className="fixed top-0 left-0 w-full p-8 flex justify-between items-center z-50 text-white mix-blend-difference">
-        <span className="font-bold text-xl tracking-tighter">KÜHL IT</span>
+        <img src="./src/assets/logo.png" alt="Kühl IT Solutions Logo" className="h-16 w-auto" />
         <div className="space-x-8 text-sm uppercase tracking-widest hidden md:block">
           <a href="#referenzen" className="hover:opacity-50 transition">Work</a>
           <a href="#kontakt" className="hover:opacity-50 transition">Kontakt</a>

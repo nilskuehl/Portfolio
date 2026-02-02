@@ -24,6 +24,7 @@ function OrganicChrome() {
             // Hohe Segmente für weiche, flüssige Rundungen
             args={[1, 0.4, 256, 64, 2, 3]}
             scale={0.6}
+            position={[1.5, 0, 0]}
         >
             <MeshDistortMaterial
                 color="#ffffff"       // Weißes Grundmaterial für Chrome
