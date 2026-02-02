@@ -16,6 +16,13 @@ function OrganicChrome() {
 
         meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, targetRotX, 0.05);
         meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, targetRotY, 0.05);
+
+        // Responsive Position - auf Mobile kleiner und zentraler
+        const isMobile = window.innerWidth < 768;
+        const targetX = isMobile ? 0 : 1.5; // Auf Mobile zentriert, Desktop rechts
+        const targetScale = isMobile ? 0.4 : 0.6; // Auf Mobile viel kleiner
+        meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, targetX, 0.1);
+        meshRef.current.scale.setScalar(THREE.MathUtils.lerp(meshRef.current.scale.x, targetScale, 0.1));
     });
 
     return (
