@@ -23,13 +23,12 @@ export default function About() {
                     {/* Text Block - Full Width Below */}
                     <div className="space-y-6 text-gray-800 p-8 md:p-12 border border-black/20 bg-white/40 backdrop-blur-sm max-w-2xl">
                         <p className="text-lg md:text-xl leading-relaxed">
-                            Wir entwickeln IT-Lösungen, die nicht nur funktionieren, sondern überzeugen.
-                            Mit einem klaren Fokus auf Architektur, Performance und Wartbarkeit.
+                            Vom Bachelor in <strong>Stuttgart</strong> bis zum Master in <strong>Ulm</strong> habe ich mein Fundament gebaut, um heute Software auf höchstem Niveau zu realisieren. Meine Arbeitsweise wurde durch die strengen Engineering-Standards bei <strong>Mercedes-Benz</strong> und die datengetriebene Präzision in der <strong>Medizinischen Systembiologie</strong> geformt.                        </p>
+                        <p className="text-lg md:text-xl leading-relaxed">
+                            Diese Mischung aus industrieller Skalierbarkeit und wissenschaftlicher Präzision ist mein Fundament, um für Sie Software zu bauen, die technologisch überzeugt und wirtschaftlich gewinnt.
                         </p>
-                        <p className="text-base md:text-lg leading-relaxed text-gray-700">
-                            Unser Team verbindet jahrelange Expertise in modernen Technologien mit einem
-                            tiefen Verständnis für geschäftliche Anforderungen. Von der ersten Konzeption
-                            bis zur finalen Implementierung – wir liefern Code, der Bestand hat.
+                        <p className="text-lg md:text-xl leading-relaxed">
+                            Ich liefere keinen Standard-Code, sondern zukunftssichere Architektur mit Fokus auf Performance und Wartbarkeit – damit Ihre IT nicht nur heute funktioniert, sondern Ihr Business von morgen trägt.
                         </p>
                     </div>
                 </motion.div>
@@ -37,18 +36,17 @@ export default function About() {
                 {/* Stats / Values Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-20 md:mt-32 border-t border-black/20 pt-16"
                 >
                     <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
-                        <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">10+</h3>
+                        <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">7+</h3>
                         <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Jahre Erfahrung</p>
                     </div>
                     <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
-                        <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">50+</h3>
-                        <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Projekte</p>
+                        <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">10</h3>
+                        <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Erfolgreiche Projekte</p>
                     </div>
                     <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
                         <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">100%</h3>
