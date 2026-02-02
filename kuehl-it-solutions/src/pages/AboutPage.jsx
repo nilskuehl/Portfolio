@@ -14,12 +14,28 @@ export default function AboutPage() {
                             transition={{ duration: 0.8 }}
                             className="space-y-12"
                         >
-                            {/* Headline */}
-                            <div>
-                                <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 tracking-tight leading-tight">
-                                    Über uns
-                                </h1>
-                                <div className="h-1 w-20 bg-black"></div>
+                            {/* Headline with Profile Image - Image aligned right with text block */}
+                            <div className="flex flex-row items-start justify-between max-w-2xl">
+                                <div>
+                                    <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 tracking-tight leading-tight">
+                                        Über mich
+                                    </h1>
+                                    <div className="h-1 w-20 bg-black"></div>
+                                </div>
+
+                                {/* Profile Image */}
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    className="ml-4 md:ml-8"
+                                >
+                                    <img
+                                        src="./src/assets/me.jpeg"
+                                        alt="Nils Kühl"
+                                        className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-lg border-2 border-black/20 shadow-lg"
+                                    />
+                                </motion.div>
                             </div>
 
                             {/* Text Block */}

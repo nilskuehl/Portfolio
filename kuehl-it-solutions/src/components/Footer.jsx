@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="w-full px-8 flex flex-col md:flex-row justify-between gap-4">
                 <div>
                     <h4 className="text-black uppercase tracking-widest mb-2">Kühl IT Solutions</h4>
-                    <p>Musterstraße 1<br />12345 Musterstadt</p>
+                    <p>nils.kuehl@kuehlitsolutions.com<br />+49 152 3113320</p>
                 </div>
                 <div className="flex flex-col md:text-right gap-2">
                     <a href="#" className="hover:text-black transition">Datenschutzerklärung</a>

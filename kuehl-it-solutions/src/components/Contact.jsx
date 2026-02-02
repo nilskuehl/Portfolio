@@ -14,7 +14,7 @@ export default function Contact() {
 
                         <div className="mt-12 space-y-4">
                             <p className="text-sm text-gray-600 uppercase tracking-widest">Email</p>
-                            <a href="mailto:contact@kuehl-it.de" className="text-xl text-black hover:text-gray-600 transition">contact@kuehl-it.de</a>
+                            <a href="mailto:contact@kuehl-it.de" className="text-xl text-black hover:text-gray-600 transition">contact@kuehlitsolutions.com</a>
                         </div>
                     </div>
 
