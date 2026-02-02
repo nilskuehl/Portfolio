@@ -59,23 +59,23 @@ export default function AboutPage() {
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-20 md:mt-32 border-t border-black/20 pt-16"
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mt-20 md:mt-32 border-t border-black/20 pt-16"
                         >
                             <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
                                 <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">7+</h3>
-                                <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Jahre Erfahrung</p>
+                                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-600">Jahre Erfahrung</p>
                             </div>
                             <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
                                 <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">10</h3>
-                                <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Erfolgreiche Projekte</p>
+                                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-600">Erfolgreiche Projekte</p>
                             </div>
                             <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
                                 <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">100%</h3>
-                                <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Kundenzufriedenheit</p>
+                                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-600">Kundenzufriedenheit</p>
                             </div>
                             <div className="text-center md:text-left p-6 border border-black/20 bg-white/40 backdrop-blur-sm">
                                 <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">24/7</h3>
-                                <p className="text-sm md:text-base uppercase tracking-widest text-gray-600">Support</p>
+                                <p className="text-xs md:text-sm uppercase tracking-wide text-gray-600">Support</p>
                             </div>
                         </motion.div>
 
