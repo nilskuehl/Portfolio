@@ -58,63 +58,70 @@ export default function App() {
         {/* Burger Menu Overlay - links oben, kleiner */}
         <AnimatePresence>
           {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="fixed top-24 left-8 z-40 px-4 py-3 bg-white/40 backdrop-blur-sm border border-black/20 rounded-lg"
-            >
-              <div className="flex flex-col items-start">
-                <Link
-                  to="/"
-                  onClick={() => setMenuOpen(false)}
-                  style={{ color: '#C9A961', textDecoration: 'none' }}
-                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-                >
-                  Home
-                </Link>
-                <div className="w-full h-px bg-black/10 my-1"></div>
-                <Link
-                  to="/about"
-                  onClick={() => setMenuOpen(false)}
-                  style={{ color: '#C9A961', textDecoration: 'none' }}
-                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-                >
-                  Über mich
-                </Link>
-                <div className="w-full h-px bg-black/10 my-1"></div>
-                <Link
-                  to="/#referenzen"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setTimeout(() => {
-                      const element = document.getElementById('referenzen');
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                  }}
-                  style={{ color: '#C9A961', textDecoration: 'none' }}
-                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-                >
-                  Work
-                </Link>
-                <div className="w-full h-px bg-black/10 my-1"></div>
-                <Link
-                  to="/#kontakt"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setTimeout(() => {
-                      const element = document.getElementById('kontakt');
-                      element?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                  }}
-                  style={{ color: '#C9A961', textDecoration: 'none' }}
-                  className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
-                >
-                  Kontakt
-                </Link>
-              </div>
-            </motion.div>
+            <>
+              {/* Invisible overlay to catch outside clicks */}
+              <div
+                className="fixed inset-0 z-30"
+                onClick={() => setMenuOpen(false)}
+              />
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="fixed top-24 left-8 z-40 px-4 py-3 bg-white/40 backdrop-blur-sm border border-black/20 rounded-lg"
+              >
+                <div className="flex flex-col items-start">
+                  <Link
+                    to="/"
+                    onClick={() => setMenuOpen(false)}
+                    style={{ color: '#C9A961', textDecoration: 'none' }}
+                    className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                  >
+                    Home
+                  </Link>
+                  <div className="w-full h-px bg-black/10 my-1"></div>
+                  <Link
+                    to="/about"
+                    onClick={() => setMenuOpen(false)}
+                    style={{ color: '#C9A961', textDecoration: 'none' }}
+                    className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                  >
+                    Über mich
+                  </Link>
+                  <div className="w-full h-px bg-black/10 my-1"></div>
+                  <Link
+                    to="/#referenzen"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setTimeout(() => {
+                        const element = document.getElementById('referenzen');
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }}
+                    style={{ color: '#C9A961', textDecoration: 'none' }}
+                    className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                  >
+                    Work
+                  </Link>
+                  <div className="w-full h-px bg-black/10 my-1"></div>
+                  <Link
+                    to="/#kontakt"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setTimeout(() => {
+                        const element = document.getElementById('kontakt');
+                        element?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }}
+                    style={{ color: '#C9A961', textDecoration: 'none' }}
+                    className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
+                  >
+                    Kontakt
+                  </Link>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
 
