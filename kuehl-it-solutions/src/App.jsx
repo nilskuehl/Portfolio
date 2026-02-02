@@ -49,7 +49,7 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="fixed top-32 left-8 z-40 p-6 bg-white/40 backdrop-blur-sm border border-black/20 rounded-lg"
+              className="fixed top-24 left-8 z-40 px-4 py-3 bg-white/40 backdrop-blur-sm border border-black/20 rounded-lg"
             >
               <div className="flex flex-col items-start">
                 <Link
