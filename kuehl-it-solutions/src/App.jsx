@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Background3D from './components/Background3D';
 import HomePage from './pages/HomePage';
@@ -8,11 +8,25 @@ import AboutPage from './pages/AboutPage';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <Router>
       <div className="bg-[#e8e2d4] min-h-screen selection:bg-black selection:text-white">
-        {/* Navigation - nur Burger Menu und Logo links */}
+        {/* Navigation */}
         <nav className="absolute top-0 left-0 w-full p-8 flex items-center gap-1 z-50">
           {/* Burger Menu */}
           <button
@@ -106,6 +120,24 @@ export default function App() {
 
         {/* Der 3D Hintergrund (bleibt immer gleich) */}
         <Background3D />
+
+        {/* Back to Top Button */}
+        <AnimatePresence>
+          {showBackToTop && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={scrollToTop}
+              className="fixed top-8 left-8 z-50 p-3 bg-white/40 backdrop-blur-sm border border-black/20 rounded-full hover:bg-white/60 transition-all"
+              style={{ background: 'rgba(255, 255, 255, 0.4)', border: '1px solid rgba(0, 0, 0, 0.2)' }}
+              aria-label="Back to top"
+            >
+              <ArrowUp size={24} className="text-black" />
+            </motion.button>
+          )}
+        </AnimatePresence>
 
         {/* Routes - Content wechselt, Background bleibt */}
         <Routes>

@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 export default function AboutPage() {
     return (
-        <div className="relative z-10">
+        <div className="relative z-10 pt-24">
             <main className="relative pt-32">
                 <section id="about-page" className="relative min-h-screen py-20 md:py-32 px-6 md:px-12">
                     <div className="max-w-6xl mx-auto">
