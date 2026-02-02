@@ -70,23 +70,35 @@ export default function App() {
                   Über mich
                 </Link>
                 <div className="w-full h-px bg-black/10 my-1"></div>
-                <a
-                  href="#referenzen"
-                  onClick={() => setMenuOpen(false)}
+                <Link
+                  to="/#referenzen"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setTimeout(() => {
+                      const element = document.getElementById('referenzen');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
                   style={{ color: '#C9A961', textDecoration: 'none' }}
                   className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
                 >
                   Work
-                </a>
+                </Link>
                 <div className="w-full h-px bg-black/10 my-1"></div>
-                <a
-                  href="#kontakt"
-                  onClick={() => setMenuOpen(false)}
+                <Link
+                  to="/#kontakt"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setTimeout(() => {
+                      const element = document.getElementById('kontakt');
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
                   style={{ color: '#C9A961', textDecoration: 'none' }}
                   className="block text-xl md:text-2xl font-bold hover:opacity-80 transition py-1"
                 >
                   Kontakt
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}
