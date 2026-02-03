@@ -31,7 +31,7 @@ export default function AboutPage() {
                                     className="ml-4 md:ml-8"
                                 >
                                     <img
-                                        src="./src/assets/me.jpeg"
+                                        src="/me.jpeg"
                                         alt="Nils Kühl"
                                         className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-lg border-2 border-black/20 shadow-lg"
                                     />

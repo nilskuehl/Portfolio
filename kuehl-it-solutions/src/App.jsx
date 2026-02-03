@@ -51,7 +51,7 @@ export default function App() {
 
           {/* Logo */}
           <Link to="/">
-            <img src="./src/assets/logo.png" alt="Kühl IT Solutions Logo" className="h-16 w-auto" />
+            <img src="/logo.png" alt="Kühl IT Solutions Logo" className="h-16 w-auto" />
           </Link>
         </nav>
 
