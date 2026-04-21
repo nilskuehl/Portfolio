@@ -1,10 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+
+const aboutJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+        '@type': 'Person',
+        name: 'Nils K\u00fchl',
+        jobTitle: 'Software Architect',
+        image: 'https://kuehlitsolutions.com/me.jpeg',
+        worksFor: {
+            '@type': 'Organization',
+            name: 'K\u00fchl IT Solutions',
+            url: 'https://kuehlitsolutions.com/',
+        },
+        knowsAbout: [
+            'Software Architektur',
+            'Cloud Solutions',
+            'Performance Optimierung',
+            'Medizinische Systembiologie',
+        ],
+    },
+};
 
 export default function AboutPage() {
     return (
         <div className="relative z-10 pt-24">
+            <SEO
+                title={'\u00dcber Nils K\u00fchl | K\u00fchl IT Solutions'}
+                description={'Nils K\u00fchl verbindet Forschung, Automotive Engineering und Software-Architektur f\u00fcr pr\u00e4zise, skalierbare und wartbare IT-L\u00f6sungen.'}
+                url="https://kuehlitsolutions.com/about"
+                image="https://kuehlitsolutions.com/me.jpeg"
+                jsonLd={aboutJsonLd}
+            />
             <main className="relative pt-32">
                 <section id="about-page" className="relative min-h-screen py-20 md:py-32 px-6 md:px-12">
                     <div className="max-w-6xl mx-auto">
