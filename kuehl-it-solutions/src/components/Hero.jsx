@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
     return (
-        <section className="relative h-screen flex flex-col items-center justify-center z-10 text-black px-4 md:px-6">
+        <section className="relative min-h-[calc(100svh-6rem)] flex flex-col items-center justify-center z-10 text-black px-4 md:px-6">
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-12 flex flex-col items-center gap-2 text-gray-600"
+                className="absolute bottom-20 md:bottom-16 flex flex-col items-center gap-2 text-gray-600"
             >
                 <span className="text-[10px] md:text-xs uppercase tracking-widest">Scroll to explore</span>
                 <motion.div
