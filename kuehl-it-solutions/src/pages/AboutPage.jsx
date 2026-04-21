@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 
@@ -22,8 +23,25 @@ const aboutJsonLd = {
             'Performance Optimierung',
             'Medizinische Systembiologie',
         ],
+        sameAs: [
+            'https://github.com/nilskuehl',
+            'https://www.linkedin.com/in/nilskuehl/',
+        ],
     },
 };
+
+const socialLinks = [
+    {
+        label: 'GitHub',
+        href: 'https://github.com/nilskuehl',
+        icon: <FaGithub className="h-5 w-5" aria-hidden="true" />,
+    },
+    {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/nilskuehl/',
+        icon: <FaLinkedin className="h-5 w-5" aria-hidden="true" />,
+    },
+];
 
 export default function AboutPage() {
     return (
@@ -65,6 +83,21 @@ export default function AboutPage() {
                                         alt="Nils Kühl"
                                         className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-lg border-2 border-black/20 shadow-lg"
                                     />
+                                    <div className="mt-4 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
+                                        {socialLinks.map(({ label, href, icon }) => (
+                                            <a
+                                                key={href}
+                                                href={href}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                aria-label={`${label} Profil von Nils K\u00fchl \u00f6ffnen`}
+                                                className="flex items-center justify-center gap-2 border border-black/20 bg-white/40 backdrop-blur-sm px-3 py-2 text-sm font-semibold text-black hover:bg-white/70 hover:border-black/40 transition-all"
+                                            >
+                                                {icon}
+                                                <span>{label}</span>
+                                            </a>
+                                        ))}
+                                    </div>
                                 </motion.div>
                             </div>
 
