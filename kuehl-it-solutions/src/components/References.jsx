@@ -23,14 +23,10 @@ export default function References() {
 
                 {/* Grid: 1 Spalte auf Mobile, 2 auf Desktop */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                    {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group border border-black/20 bg-white/60 backdrop-blur-md p-6 md:p-10 hover:bg-white/80 hover:border-black/40 transition-all duration-500 cursor-default rounded-lg md:rounded-none shadow-sm"
+                    {projects.map((project) => (
+                        <div
+                            key={project.id}
+                            className="group border border-black/20 bg-white/60 backdrop-blur-md p-6 md:p-10 hover:bg-white/80 hover:border-black/40 transition-all duration-500 cursor-default rounded-lg md:rounded-none shadow-sm transform-gpu"
                         >
                             <div className="flex justify-between items-start mb-6 md:mb-8">
                                 <span className="text-gray-500 font-mono text-sm">/{project.id}</span>
@@ -41,7 +37,7 @@ export default function References() {
                             <p className="text-[10px] md:text-xs uppercase tracking-widest text-gray-600 group-hover:text-black transition-colors">
                                 {project.stack}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
