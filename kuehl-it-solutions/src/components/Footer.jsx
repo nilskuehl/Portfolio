@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -9,7 +10,7 @@ export default function Footer() {
                     <p>nils.kuehl@kuehlitsolutions.com<br />+49 152 3113320</p>
                 </div>
                 <div className="flex flex-col md:text-right gap-2">
-                    <a href="#" className="hover:text-black transition">Datenschutzerklärung</a>
+                    <Link to="/datenschutz" className="hover:text-black transition">Datenschutzerklärung</Link>
                     <a href="#" className="hover:text-black transition">Impressum</a>
                     <p>© {new Date().getFullYear()} All Rights Reserved.</p>
                 </div>

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Background3D from './components/Background3D';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -150,6 +151,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/datenschutz" element={<PrivacyPolicyPage />} />
         </Routes>
       </div>
     </Router>
